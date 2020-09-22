@@ -1,14 +1,13 @@
 # api-mongodb
 
  
- Repositorio de api  👩‍💻👨‍💻.
+ Repositorio de api .
 
 API  mongoDB, usando *Express*, *MongoAtlas*, *Mongoose*.
 
 
 ## ¿Como usar la API?
 
- 
  ---------------------------------------------------------------------
 ---------------------------------------------------------------------
 **CONTRATO**
@@ -33,3 +32,9 @@ API  mongoDB, usando *Express*, *MongoAtlas*, *Mongoose*.
 - POST url/:nameUser/listSong -> agrego una cancion a favorito.
 
 - DELETE url/:nameUser/listSong  -> eliminar una cancion favorita.
+ ---------------------------------------------------------------------
+ ### Cual es la arquitectura que se uso para el codigo?
+ -MVC M:model
+      V:views
+      C:controller
+Cada carpeta tienen un *Readme.md* explicando que cosa va en cada uno, esto es para una mejor comprension del codigo.
