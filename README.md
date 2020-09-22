@@ -9,7 +9,6 @@ API  mongoDB, usando *Express*, *MongoAtlas*, *Mongoose*.
 ## ¿Como usar la API?
 
  ---------------------------------------------------------------------
----------------------------------------------------------------------
 **CONTRATO**
 
 *general*
@@ -25,7 +24,6 @@ API  mongoDB, usando *Express*, *MongoAtlas*, *Mongoose*.
 - POST url/listSong-> agrego una cancion  con song en el body formato JSON.
 
 - DELETE url/listSong  -> eliminar una cancion.
-======
 - PUT url/listSong -> modifica una cancion.
 >>>>>>> 
 *para un usuario especifico*
