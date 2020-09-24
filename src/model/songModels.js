@@ -22,12 +22,19 @@ let songSchema = new Schema({
 let Song = mongoose.model("Song", songSchema);
 
 //FUNCIONES
-
+//devuele toda las canciones
 const allSongsproyect = async () => {
   const theSongs = await Song.find();
   return theSongs;
 };
 
+const songSearchBd = async (name) => {
+  
+  const songName = await Song.find({name: name});
+  return songName;
+};
+
 module.exports = {
-    allSongsproyect
+    allSongsproyect,
+    songSearchBd
 };
