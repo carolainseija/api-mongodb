@@ -7,7 +7,7 @@ app.use(express.json());
 
 
 //get devuelve toda las canciones
-app.route("/")
+app.route("/users")
   .get(async(req, res) => {
     try{
       const usuarios = await controller.allUsers();
