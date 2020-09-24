@@ -14,14 +14,14 @@ API  mongoDB, usando *Express*, *MongoAtlas*, *Mongoose*.
 *general*
 
 
-#####Coleccion Canciones
+##### Coleccion Canciones
 
 - GET url/songs ->devuelve toda las canciones, sino hay devuelve un error.
 - GET url/:nameSong -> devuelve una cancion especifica.
 - POST url/addList-> agrego una cancion  a la base de datos con song en el body formato JSON.
 - DELETE url/delete/:nameSong  -> eliminar una cancion.
 - PUT url/listSong -> modifica una cancion.
-#####Coleccion Usuarios
+##### Coleccion Usuarios
 - GET url/users -> devuelve toda la lista de usuarios.
 >>>>>>> 
 *para un usuario especifico*
