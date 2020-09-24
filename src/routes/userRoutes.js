@@ -6,7 +6,7 @@ var app = express();
 app.use(express.json());
 
 
-//get devuelve toda las canciones
+//get devuelve toda los usuarios
 app.route("/users")
   .get(async(req, res) => {
     try{
@@ -19,7 +19,9 @@ app.route("/users")
     } catch(e) {
       throw e;
     }
-  })
+  });
+
+ 
 
 
   app.listen(3000);
