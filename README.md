@@ -13,11 +13,9 @@ API  mongoDB, usando *Express*, *MongoAtlas*, *Mongoose*.
 
 *general*
 
-- GET url/-> devuelve la lista de canciones, si no hay canciones devuelve un error.
-
 - GET url/users -> devuelve toda la lista de usuarios.
 
-- GET url/songs ->devuelve toda las canciones.
+- GET url/songs ->devuelve toda las canciones, sino hay devuelve un error.
 
 - GET url/:nameSong -> devuelve una cancion especifica.
 
