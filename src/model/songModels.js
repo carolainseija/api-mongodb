@@ -34,7 +34,18 @@ const songSearchBd = async (name) => {
   return songName;
 };
 
+
+const addSongBd = async(newSong) => {
+  
+    const myNewSong = await Song.push(newSong);
+    newSong.save();
+    return myNewSong;
+  
+   
+}
+
 module.exports = {
     allSongsproyect,
-    songSearchBd
+    songSearchBd,
+    addSongBd
 };

@@ -32,5 +32,18 @@ app.route("/:nameSong").get(async (req, res) => {
   }
 });
 
+//post Agrega una cancion desde el body a la base de datos
+app.route('/addList')
+.post(async(req, res) => {
+try{
+  const newSong = req.body;
+const addSongBaseDate = controller.addSongCont(newSong);
+res.send(addSongBaseDate);
+} catch(error) {
+  res.send("No se pudo agregar cancion a su base de datos");
+  res.status(400);
+}
+});
+
 app.listen(3000);
 console.log("puerto 3000");
