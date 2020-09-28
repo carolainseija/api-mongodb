@@ -1,6 +1,7 @@
 //Server principla.
 const mongoose = require("mongoose");
 const userRoutes = require('./routes/userRoutes');
+const songRoutes = require('./routes/songRoutes');
 const express = require("express");
 var server = express();
 server.use(express.json());
@@ -24,6 +25,8 @@ db.once("open", function () {
 
 //usuarios
 server.get('/users' , userRoutes.theUsers);
+//canciones
+server.get('/songs', songRoutes.theSongs);
 
 
 //puerto
