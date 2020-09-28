@@ -19,8 +19,16 @@ const allSongsproyect = async () => {
   return theSongs;
 };
 
+const songSearchDB = async(name) => {
+  const songFind = Song.find({name: name});
+  return songFind;
+};
+
+
+
 
 
 module.exports = {
-  allSongsproyect
+  allSongsproyect,
+  songSearchDB
 };

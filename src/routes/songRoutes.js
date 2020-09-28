@@ -16,11 +16,24 @@ async function theSongs(req, res) {
     res.status(404).send("no se pudo encontrar nada");
   } catch(e) {
     throw e;
-  }}
+  }};
+//devuelve cancion por nombre
+async function songForName(req, res) {
+  let name = req.params.name;
+  try{
+   
+    const songSearch = await controller.songSearchCont(name);
+    res.send(songSearch);
 
+  } catch (error) {
+    res.sendStatus(404);
+    console.log("la cancion que busca no se encontro en la base de datos");
+  }
+};
 
 
 
 module.exports = {
-  theSongs
+  theSongs,
+  songForName
 }

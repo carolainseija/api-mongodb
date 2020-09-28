@@ -25,8 +25,12 @@ db.once("open", function () {
 
 //usuarios
 server.get('/users' , userRoutes.theUsers);
+
 //canciones
 server.get('/songs', songRoutes.theSongs);
+server.get('/:name', songRoutes.songForName);
+
+
 
 
 //puerto
