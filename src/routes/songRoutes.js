@@ -1,5 +1,4 @@
 //RUTAS - EXPRESS
-const express = require("express");
 
 const controller = require("../controller/songController");
 
@@ -30,10 +29,24 @@ async function songForName(req, res) {
     console.log("la cancion que busca no se encontro en la base de datos");
   }
 };
+//elimina cancion por nombre
+async function searchSongForDelete(req, res) {
+  let name = req.params.name;
+  try{
+   
+    const songForDelete = await controller.songDeleteCont(name);
+    res.send(songForDelete);
+
+  } catch (error) {
+    res.sendStatus(404);
+    console.log("la cancion que busca para eliminar no se encontro en la base de datos");
+  }
+};
 
 
 
 module.exports = {
   theSongs,
-  songForName
+  songForName,
+  searchSongForDelete
 }

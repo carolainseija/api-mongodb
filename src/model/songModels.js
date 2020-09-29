@@ -20,9 +20,15 @@ const allSongsproyect = async () => {
 };
 
 const songSearchDB = async(name) => {
-  const songFind = Song.find({name: name});
+  const songFind = await Song.find({name: name});
   return songFind;
 };
+const songDeleteBD = async(name) => {
+  const songDeleteFind = await Song.findOneAndDelete({name: name});
+  
+
+  
+}
 
 
 
@@ -30,5 +36,6 @@ const songSearchDB = async(name) => {
 
 module.exports = {
   allSongsproyect,
-  songSearchDB
+  songSearchDB,
+  songDeleteBD
 };

@@ -9,10 +9,15 @@ const songSearchCont = async(name) => {
     return await baseDeDatos.songSearchDB(name);
 };
 
+const songDeleteCont = async(name) => {
+    return await baseDeDatos.songDeleteBD(name);
+};
+
 
 
 
 module.exports = {
     allSongs,
-    songSearchCont
+    songSearchCont,
+    songDeleteCont
 }
