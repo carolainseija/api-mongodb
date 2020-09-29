@@ -42,11 +42,25 @@ async function searchSongForDelete(req, res) {
     console.log("la cancion que busca para eliminar no se encontro en la base de datos");
   }
 };
+//agrega
+async function addSongForBody(req, res) {
+  let newSong = req.body;
+  try{
+   
+    const addSong = await controller.addSongCont(newSong);
+    res.send(addSong);
+
+  } catch (error) {
+    res.sendStatus(404);
+    console.log('la cancion no se puede agregar');
+  }
+};
 
 
 
 module.exports = {
   theSongs,
   songForName,
-  searchSongForDelete
+  searchSongForDelete,
+  addSongForBody
 }

@@ -30,6 +30,8 @@ server.get('/users' , userRoutes.theUsers);
 server.get('/songs', songRoutes.theSongs);
 server.get('/songs/:name', songRoutes.songForName);
 server.delete('/delete/:name', songRoutes.searchSongForDelete);
+server.post('/addList', songRoutes.addSongForBody);
+
 
 
 

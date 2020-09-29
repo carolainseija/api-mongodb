@@ -14,10 +14,20 @@ const songDeleteCont = async(name) => {
 };
 
 
+const addSongCont = async(newSong) => {
+    if(newSong.name  && newSong.album && newSong.artist) {
+        return await baseDeDatos.addSongBD(newSong);
+    }else {
+        return('denegado');
+    }
+    
+};
+
 
 
 module.exports = {
     allSongs,
     songSearchCont,
-    songDeleteCont
+    songDeleteCont,
+    addSongCont
 }
