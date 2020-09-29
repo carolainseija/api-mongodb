@@ -45,7 +45,7 @@ async function theUsers(req, res) {
     }
   };
 
-  //deleteUsers
+  //delete users con id
   async function deleteUsers(req, res) {
     let ids = req.body._id;
   try{
