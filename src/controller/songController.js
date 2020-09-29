@@ -23,7 +23,10 @@ const addSongCont = async(newSong) => {
     
 };
 
-
+/*const modifySongsCont = async(nameSong, modify) => {
+    return await baseDeDatos.modifySongsBD(nameSong, modify);
+}
+*/
 
 module.exports = {
     allSongs,

@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 //ESQUEMA
 let songSchema = new Schema({
   name: { type: String },
+  album: {type: String},
   artist: { type: String },
 });
 //MODELO
@@ -31,8 +32,11 @@ const addSongBD = async(newSong) => {
  const saveUser =  new Song(newSong);
  await saveUser.save();
 }
-
-
+/*
+const modifySongsBD = async(nameSong, modify) => {
+  const saveSongModify = await Song.findOneAndUpdate({name: nameSong}, modify);
+  saveSongModify.save();
+}*/
 
 
 

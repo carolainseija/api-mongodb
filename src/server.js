@@ -25,12 +25,22 @@ db.once("open", function () {
 
 //usuarios
 server.get('/users' , userRoutes.theUsers);
+server.post('/users', userRoutes.addUsers);
+server.delete('/delete', userRoutes.deleteUsers);
+
 
 //canciones
 server.get('/songs', songRoutes.theSongs);
 server.get('/songs/:name', songRoutes.songForName);
 server.delete('/delete/:name', songRoutes.searchSongForDelete);
 server.post('/addList', songRoutes.addSongForBody);
+
+//agrega canciones a un usuario
+/*
+server.post('/favorite', songRoutes.myFavoriteSong);*/
+
+
+//server.put('/:nameSong', songRoutes.modifySong);
 
 
 

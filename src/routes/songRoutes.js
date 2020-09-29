@@ -57,10 +57,28 @@ async function addSongForBody(req, res) {
 };
 
 
+/*
+async function modifySong(req, res) {
+  try {
+    const nameSong = req.params.name;
+    const modify = req.body;
+    const modifySongs = await controller.modifySongsCont(nameSong, modify);
+    if (modifySongsCont){
+      res.status(404).send("algo salio mal");
+    } else {
+      res.status(201).send("cancion modificada");
+    }
+  } catch (e) {
+    throw e;
+  }
+};
+*/
+
 
 module.exports = {
   theSongs,
   songForName,
   searchSongForDelete,
   addSongForBody
+  
 }
