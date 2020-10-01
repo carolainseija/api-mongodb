@@ -38,11 +38,18 @@ const songDeleteBD = async(ids) => {
   const songDeleteFind = await Users.findByIdAndRemove({_id: ids});
   return songDeleteFind;
 }
+
+const userModBD = async(nameMod, songMod) => {
+  const songModifyFind  = await Users.findOneAndUpdate({name: nameMod}, songMod);
+  songModifyFind.save();
+
+}
  
 
 
 module.exports = {
   allUsersproyect,
   addUserBD,
-  songDeleteBD
+  songDeleteBD,
+  userModBD
 }

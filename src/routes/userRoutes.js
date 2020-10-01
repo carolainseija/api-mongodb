@@ -59,9 +59,34 @@ async function theUsers(req, res) {
   }
   };
 
+//put modifica canciones
+async function modifyUser(req, res){
+  try{
+const nameMod = req.params.name;
+const songMod = req.body;
+const modiUser = await controller.modifyUseCont(nameMod, songMod);
+res.send(modiUser);
+
+  }catch(error){
+    res.send('no');
+
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
  
 module.exports = {
   theUsers,
   addUsers,
-  deleteUsers
+  deleteUsers,
+  modifyUser
 }

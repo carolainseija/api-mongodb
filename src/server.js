@@ -27,6 +27,7 @@ db.once("open", function () {
 server.get('/users' , userRoutes.theUsers);
 server.post('/users', userRoutes.addUsers);
 server.delete('/users', userRoutes.deleteUsers);
+server.put('/:name', userRoutes.modifyUser);
 
 
 //canciones
