@@ -18,14 +18,14 @@ API  mongoDB, usando *Express*, *MongoAtlas*, *Mongoose*.
 
 ##### Coleccion Canciones
 - GET url/songs ->devuelve toda las canciones, sino hay devuelve un error.
-- GET url/:nameSong -> devuelve una cancion especifica.
-- POST url/addList-> agrego una cancion  a la base de datos con song en el body formato JSON.
-- DELETE url/delete/:nameSong  -> eliminar una cancion.
-- PUT url/listSong -> modifica una cancion.
+- GET url/:name -> devuelve una cancion especifica.
+- POST url/songs-> agrego una cancion  a la base de datos con song en el body formato JSON.
+- DELETE url/:name  -> eliminar una cancion.
+- PUT url/songs -> modifica una cancion.
 >>>>>>> 
 *para un usuario especifico*
-- POST url/:nameUser/:nameSong -> agrego una cancion a favorito.
-- DELETE url/:nameUser/delete/:nameSong-> eliminar una cancion favorita.
+- POST url/:name -> agrego una cancion a favorito.
+- DELETE url/:name -> eliminar una cancion favorita.
  ---------------------------------------------------------------------
  ### Cual es la arquitectura que se uso para el codigo?
  -MVC M:model
