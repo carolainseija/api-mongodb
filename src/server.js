@@ -34,6 +34,8 @@ server.get('/songs', songRoutes.theSongs);
 server.get('/:name', songRoutes.songForName);
 server.delete('/:name', songRoutes.searchSongForDelete);
 server.post('/songs', songRoutes.addSongForBody);
+server.put('/:name', songRoutes.modify);
+
 
 //agrega canciones a un usuario
 /*

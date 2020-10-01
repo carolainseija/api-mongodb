@@ -32,11 +32,11 @@ const addSongBD = async(newSong) => {
  const saveUser =  new Song(newSong);
  await saveUser.save();
 }
-/*
-const modifySongsBD = async(nameSong, modify) => {
-  const saveSongModify = await Song.findOneAndUpdate({name: nameSong}, modify);
+
+const modifySongsBD = async(nameSong, modi) => {
+  const saveSongModify = await Song.findOneAndUpdate({name: nameSong}, modi);
   saveSongModify.save();
-}*/
+}
 
 
 
@@ -44,5 +44,6 @@ module.exports = {
   allSongsproyect,
   songSearchDB,
   songDeleteBD,
-  addSongBD
+  addSongBD,
+  modifySongsBD
 };

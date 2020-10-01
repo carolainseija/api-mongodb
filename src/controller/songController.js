@@ -23,14 +23,15 @@ const addSongCont = async(newSong) => {
     
 };
 
-/*const modifySongsCont = async(nameSong, modify) => {
-    return await baseDeDatos.modifySongsBD(nameSong, modify);
-}
-*/
+const modifySongsCont = async(nameSong, modi) => {
+    return await baseDeDatos.modifySongsBD(nameSong, modi);
+};
+
 
 module.exports = {
     allSongs,
     songSearchCont,
     songDeleteCont,
-    addSongCont
+    addSongCont,
+    modifySongsCont
 }
