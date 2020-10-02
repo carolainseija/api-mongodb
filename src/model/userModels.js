@@ -3,7 +3,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-/*Song = mongoose.model('Song');*/
+//MODELO de Song
+let Song = mongoose.model("Song", songSchema);
 
 
 
@@ -29,11 +30,8 @@ const addUserBD = async(newUser) => {
   await saveUs.save();
  }
 
-/*
-const mysongsBD = async () => {
-  return await Users.find({}).populate('favoriteSongs');
-}
-*/
+
+
 const songDeleteBD = async(ids) => {
   const songDeleteFind = await Users.findByIdAndRemove({_id: ids});
   return songDeleteFind;
@@ -44,12 +42,23 @@ const userModBD = async(nameMod, songMod) => {
   songModifyFind.save();
 
 }
- 
+
+const mysongsBD = async (nameUser, songFav) => {
+   //envuentro el usuario (nameUser)
+   const theUser = await Users.findOne({name: nameUser});
+    //encuentro la cancion que quiero (userFav)
+    const theSongFav = await Song.findOne({name: songFav});
+    //debo agregar la cancion
+    const addFav = await Users.aggregate({theSongFav});
+  return await Users.find({}).populate('favoriteSongs');
+}
+
 
 
 module.exports = {
   allUsersproyect,
   addUserBD,
   songDeleteBD,
-  userModBD
+  userModBD,
+  mysongsBD
 }

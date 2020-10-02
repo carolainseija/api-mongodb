@@ -26,6 +26,7 @@ const songSearchDB = async(name) => {
 };
 const songDeleteBD = async(name) => {
   const songDeleteFind = await Song.findOneAndDelete({name: name});
+  //return o save.
  
 };
 const addSongBD = async(newSong) => {

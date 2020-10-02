@@ -5,6 +5,9 @@ const songRoutes = require('./routes/songRoutes');
 const express = require("express");
 var server = express();
 server.use(express.json());
+//cors
+const cors = require('cors');
+server.use(cors());
 
 //CONEXION
 const uri =
@@ -39,16 +42,16 @@ server.put('/:name', songRoutes.modify);
 
 
 //agrega canciones a un usuario
-/*
-server.post('/favorite', songRoutes.myFavoriteSong);*/
+
+server.post('/users/:user/:song', userRoutes.myFavoriteSong);
 
 
-//server.put('/:nameSong', songRoutes.modifySong);
+
 
 
 
 
 
 //puerto
-server.listen(3000);
+server.listen(process.env.PORT);
 console.log("puerto 3000");

@@ -19,18 +19,6 @@ async function theUsers(req, res) {
   }}
 
 
-  /*
-  async function myFavoriteSong(req, res) {
-    
-    try{
-      const favs = await controller.favorites();
-    res.status(4004).send('algo salio mal');
-    } catch(e) {
-      throw e;
-    }
-      
-  }*/
-
   //addUsers
   async function addUsers(req, res) {
     const newUser = req.body;
@@ -74,19 +62,27 @@ res.send(modiUser);
 };
 
 
+async function myFavoriteSong(req, res) {
+    
+  try{
+    const nameUser = req.params.user;
+    const songFav = req.params.song;
+    const favs = await controller.favorites(nameUser, songFav);
+  res.status(4004).send(favs);
+  } catch(e) {
+    throw e;
+  }
+    
+}
 
 
 
 
 
-
-
-
-
- 
 module.exports = {
   theUsers,
   addUsers,
   deleteUsers,
-  modifyUser
+  modifyUser,
+  myFavoriteSong
 }

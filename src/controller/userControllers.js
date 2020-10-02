@@ -5,10 +5,7 @@ const allUsers = async() => {
     return await baseDeDatos.allUsersproyect();
 }
 
-/*
-const favorites = async()=> {
-    return await baseDeDatos.mysongsBD();
-}*/
+
 
 const addUserCont = async(newUser) => {
     
@@ -20,12 +17,20 @@ const songDeleteCont = async(ids) => {
 };
 
 const modifyUseCont = async(nameMod, songMod) => {
+    
 return await baseDeDatos.userModBD(nameMod, songMod);
+};
+
+const favorites = async(nameUser, songFav)=> {
+   
+    return await baseDeDatos.mysongsBD(nameUser, songFav);
+
 };
 
 module.exports = {
     allUsers,
     addUserCont,
     songDeleteCont,
-    modifyUseCont
+    modifyUseCont,
+    favorites
 }
