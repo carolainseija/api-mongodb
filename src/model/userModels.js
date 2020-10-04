@@ -17,7 +17,7 @@ let Users = mongoose.model("Users", usersSchema);
 
 //FUNCIONES
 const allUsersproyect = async () => {
-  const theUsers = await Users.find();
+  const theUsers = await Users.find().populate('favoriteSongs');
   return theUsers;
 };
 
@@ -44,42 +44,20 @@ const userModBD = async (nameMod, userMod) => {
 const addFavoriteSongBD = async (nameUser, nameSong) => {
   //encuentro el usuario (nameUser)
   const user = await Users.findOne({ name: nameUser });
-  //encuentro la cancion que quiero (nameSong)
-  const song = await Song.findOne({ name: nameSong });
   //agrego la cancion al usuario
   console.log(user);
-  user.favoriteSongs.push(song);
+  user.favoriteSongs.push(nameSong);
   await user.save();
 };
 
-/*probando el populate
-    user.favoriteSongs.push(song);
-    await user.save();
-    Song.populate(Users, {path: "favoriteSongs"});*/
 
-/* funcion que guarda
-const addFavoriteSongBD = async (nameUser, nameSong) => {
-   //encuentro el usuario (nameUser)
-   const user = await Users.findOne({name: nameUser});
-    //encuentro la cancion que quiero (nameSong)
-    const song = await Song.findOne({name: nameSong});
-    //agrego la cancion al usuario
-    console.log(user);
-    user.favoriteSongs.push(song);
-    user.save();
- 
-}
-*/
 
-/*
- Libro.find({}, function(err, libros) {
-3        res.status(200).send(libros)
-4    }); */
+
 
 module.exports = {
   allUsersproyect,
   addUserBD,
   userDeleteBD,
   userModBD,
-  addFavoriteSongBD,
+  addFavoriteSongBD
 };

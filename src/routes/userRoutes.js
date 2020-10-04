@@ -60,8 +60,8 @@ async function modifyUser(req, res) {
 //agrega una cancion favorita a un usuario especifico
 async function addFavoriteSong(req, res) {
   try {
-    const nameUser = req.params.user;
-    const nameSong = req.params.song;
+    const nameUser = req.params.users;
+    const nameSong = req.body;
     const favs = await controller.addFavoriteSongCont(nameUser, nameSong);
     res.status(201).send(favs);
   } catch (e) {

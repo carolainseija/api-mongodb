@@ -43,7 +43,7 @@ server.put('/songs/:name', songRoutes.modify);
 
 //agrega canciones a un usuario
 
-server.post('/users/:user/:song', userRoutes.addFavoriteSong);
+server.post('/users/songs/:users', userRoutes.addFavoriteSong);
 
 
 

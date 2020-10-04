@@ -19,7 +19,6 @@ return await model.userModBD(nameMod, userMod);
 
 const addFavoriteSongCont = async(nameUser, nameSong)=> {
     return await model.addFavoriteSongBD(nameUser, nameSong);
-
 };
 
 module.exports = {
