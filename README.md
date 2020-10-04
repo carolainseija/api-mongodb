@@ -42,7 +42,9 @@ API  mongoDB, usando *Express*, *MongoAtlas*, *Mongoose*.
 - PUT url/songs/:name -> modifica una cancion.
 
 *para un usuario especifico*
-- POST url/:name -> agrego una cancion a favorito.
+- POST url/users/songs/:user-> agrego una cancion a favorito desde el body con la id
+ con este formato:
+["5f79278dc427e33460626eee"]
 - DELETE url/:name -> eliminar una cancion favorita.
  ---------------------------------------------------------------------
  ### Cual es la arquitectura que se uso para el codigo?
