@@ -1,30 +1,32 @@
 //controlador
-const baseDeDatos = require("../model/songModels");
+const model = require("../model/songModels");
 
 const allSongs = async() => {
-    return await baseDeDatos.allSongsproyect();
+    return await model.allSongsproyect();
 };
 
 const songSearchCont = async(name) => {
-    return await baseDeDatos.songSearchDB(name);
+if(songSearchCont.length > 0){
+    return await model.songSearchDB(name);
+}else {
+    return ('no se encontro nada');
+}
 };
 
 const songDeleteCont = async(name) => {
-    return await baseDeDatos.songDeleteBD(name);
+    return await model.songDeleteBD(name);
 };
 
-
 const addSongCont = async(newSong) => {
-    if(newSong.name  && newSong.album && newSong.artist) {
-        return await baseDeDatos.addSongBD(newSong);
+    if(newSong.name  && newSong.album && newSong.duration && newSong.artist) {
+        return await model.addSongBD(newSong);
     }else {
-        return('denegado');
+        return('imposible seguir con su peticion,algo salio mal');
     }
-    
 };
 
 const modifySongsCont = async(nameSong, modi) => {
-    return await baseDeDatos.modifySongsBD(nameSong, modi);
+    return await model.modifySongsBD(nameSong, modi);
 };
 
 

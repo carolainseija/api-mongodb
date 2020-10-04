@@ -30,20 +30,20 @@ db.once("open", function () {
 server.get('/users' , userRoutes.theUsers);
 server.post('/users', userRoutes.addUsers);
 server.delete('/users', userRoutes.deleteUsers);
-server.put('/:name', userRoutes.modifyUser);
+server.put('/users/:name', userRoutes.modifyUser);
 
 
 //canciones
 server.get('/songs', songRoutes.theSongs);
-server.get('/:name', songRoutes.songForName);
-server.delete('/:name', songRoutes.searchSongForDelete);
+server.get('/songs/:name', songRoutes.songForName);
+server.delete('/songs/:name', songRoutes.searchSongForDelete);
 server.post('/songs', songRoutes.addSongForBody);
-server.put('/:name', songRoutes.modify);
+server.put('/songs/:name', songRoutes.modify);
 
 
 //agrega canciones a un usuario
 
-server.post('/users/:user/:song', userRoutes.myFavoriteSong);
+server.post('/users/:user/:song', userRoutes.addFavoriteSong);
 
 
 
@@ -53,5 +53,6 @@ server.post('/users/:user/:song', userRoutes.myFavoriteSong);
 
 
 //puerto
-server.listen(process.env.PORT);
+server.listen('4000');
+/*server.listen(process.env.PORT);*/
 console.log("puerto 3000");

@@ -11,7 +11,7 @@ let songSchema = new Schema({
   artist: { type: String },
 });
 //MODELO
-let Song = mongoose.model("Song", songSchema);
+const Song = mongoose.model("Song", songSchema);
 
 //FUNCIONES
 //devuele toda las canciones
@@ -23,15 +23,17 @@ const allSongsproyect = async () => {
 const songSearchDB = async(name) => {
   const songFind = await Song.find({name: name});
   return songFind;
+
 };
 const songDeleteBD = async(name) => {
   const songDeleteFind = await Song.findOneAndDelete({name: name});
-  //return o save.
+  return('este archivo ya no existe:' + " " + songDeleteFind);
  
 };
 const addSongBD = async(newSong) => {
- const saveUser =  new Song(newSong);
- await saveUser.save();
+ var saveSong =  new Song(newSong);
+ await saveSong.save();
+ return('cancion agregada con exito' + " " +  saveSong);
 }
 
 const modifySongsBD = async(nameSong, modi) => {
@@ -46,5 +48,6 @@ module.exports = {
   songSearchDB,
   songDeleteBD,
   addSongBD,
-  modifySongsBD
+  modifySongsBD,
+  Song
 };

@@ -1,36 +1,31 @@
 //controlador
-const baseDeDatos = require("../model/userModels");
+const model = require("../model/userModels");
 
 const allUsers = async() => {
-    return await baseDeDatos.allUsersproyect();
+    return await model.allUsersproyect();
 }
 
-
-
-const addUserCont = async(newUser) => {
-    
-        return await baseDeDatos.addUserBD(newUser);
+const addUserCont = async(newUser) => {  
+        return await model.addUserBD(newUser);
 };
 
-const songDeleteCont = async(ids) => {
-    return await baseDeDatos.songDeleteBD(ids);
+const userDeleteCont = async(ids) => {
+    return await model.userDeleteBD(ids);
 };
 
-const modifyUseCont = async(nameMod, songMod) => {
-    
-return await baseDeDatos.userModBD(nameMod, songMod);
+const modifyUseCont = async(nameMod, userMod) => {
+return await model.userModBD(nameMod, userMod);
 };
 
-const favorites = async(nameUser, songFav)=> {
-   
-    return await baseDeDatos.mysongsBD(nameUser, songFav);
+const addFavoriteSongCont = async(nameUser, nameSong)=> {
+    return await model.addFavoriteSongBD(nameUser, nameSong);
 
 };
 
 module.exports = {
     allUsers,
     addUserCont,
-    songDeleteCont,
+    userDeleteCont,
     modifyUseCont,
-    favorites
+    addFavoriteSongCont
 }

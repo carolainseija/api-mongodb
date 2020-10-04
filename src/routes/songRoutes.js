@@ -1,8 +1,5 @@
 //RUTAS - EXPRESS
-
 const controller = require("../controller/songController");
-
-
 
 //get devuelve toda las canciones
 async function theSongs(req, res) {
@@ -16,63 +13,58 @@ async function theSongs(req, res) {
   } catch(e) {
     throw e;
   }};
+
 //devuelve cancion por nombre
 async function songForName(req, res) {
   let name = req.params.name;
   try{
-   
     const songSearch = await controller.songSearchCont(name);
     res.send(songSearch);
-
   } catch (error) {
-    res.sendStatus(404);
-    console.log("la cancion que busca no se encontro en la base de datos");
+    res.send('la cancion que busca no se encontro en la base de datos');
+    res.status(404);
   }
 };
+
 //elimina cancion por nombre
 async function searchSongForDelete(req, res) {
   let name = req.params.name;
   try{
-   
     const songForDelete = await controller.songDeleteCont(name);
     res.send(songForDelete);
-
+res.status(200);
   } catch (error) {
-    res.sendStatus(404);
-    console.log("la cancion que busca para eliminar no se encontro en la base de datos");
+    res.send("la cancion que busca ya ah sido eliminada");
+    res.status(410);
   }
 };
-//agrega
+
+//agrega cancion desde el body
 async function addSongForBody(req, res) {
   let newSong = req.body;
   try{
-   
     const addSong = await controller.addSongCont(newSong);
     res.send(addSong);
-
+    res.status(201);
   } catch (error) {
-    res.sendStatus(404);
+    res.sendStatus(400);
     console.log('la cancion no se puede agregar');
   }
 };
 
 
-//modificar
+//modifica una cancion desde el body
 async function modify(req, res) {
   try {
     const nameSong = req.params.name;
     const modi = req.body;
     const modifySongs = await controller.modifySongsCont(nameSong, modi);
-    
       res.status(201).send(modifySongs);
-    
   } catch (e) {
-    throw e;
+    res.status(400);
+    res.send('la cancion no se pudo modificar');
   }
 };
-
-
-
 
 
 module.exports = {
