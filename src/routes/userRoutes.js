@@ -69,10 +69,25 @@ async function addFavoriteSong(req, res) {
   }
 }
 
+//elimina una cancion como favorita
+async function deleteFavSong(req, res) {
+  try{
+const userParams = req.params.user;
+let songForDelete = req.body;
+const songDelete = await controller.deleteFavSongCont(songForDelete, userParams);
+res.send(songDelete);
+res.status(204);
+  }catch(error){
+res.status(404);
+res.send('no podemos completar la accion solicitada');
+  }
+}
+
 module.exports = {
   theUsers,
   addUsers,
   deleteUsers,
   modifyUser,
   addFavoriteSong,
+  deleteFavSong
 };

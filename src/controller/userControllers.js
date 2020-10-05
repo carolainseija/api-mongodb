@@ -21,10 +21,15 @@ const addFavoriteSongCont = async(nameUser, nameSong)=> {
     return await model.addFavoriteSongBD(nameUser, nameSong);
 };
 
+const deleteFavSongCont = async(songForDelete, userParams) => {
+return await model.deleteFavSongDB(songForDelete, userParams);
+}
+
 module.exports = {
     allUsers,
     addUserCont,
     userDeleteCont,
     modifyUseCont,
-    addFavoriteSongCont
+    addFavoriteSongCont,
+    deleteFavSongCont
 }

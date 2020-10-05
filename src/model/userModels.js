@@ -50,6 +50,11 @@ const addFavoriteSongBD = async (nameUser, nameSong) => {
   await user.save();
 };
 
+const deleteFavSongDB = async (songForDelete, userParams) => {
+  const userWitchSong = await Users.findOne({name: userParams});
+  userWitchSong.favoriteSongs.delete(songForDelete);
+  await userWitchSong.save();
+}
 
 
 
@@ -59,5 +64,6 @@ module.exports = {
   addUserBD,
   userDeleteBD,
   userModBD,
-  addFavoriteSongBD
+  addFavoriteSongBD,
+  deleteFavSongDB
 };
