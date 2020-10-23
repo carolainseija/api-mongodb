@@ -5,7 +5,6 @@ const { Song } = require("./songModels");
 
 //ESQUEMA
 let usersSchema = new Schema({
-  _id: Schema.Types.ObjectId,
   name: { type: String },
   lastName: { type: String },
   mail: { type: String },
